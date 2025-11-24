@@ -1,10 +1,7 @@
 import csv
 
 def read_csv(input_file):
-    """
-    Reads the input CSV and returns a list of dictionaries.
-    Expected columns: Name, Roll No, Marks
-    """
+    
     data = []
     try:
         with open(input_file, mode='r', newline='', encoding='utf-8') as file:
