@@ -1,4 +1,4 @@
-package org.example.Libraryy;
+package org.example.model;
 
 import java.util.HashMap;
 

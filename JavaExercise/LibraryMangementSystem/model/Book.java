@@ -1,4 +1,4 @@
-package org.example.Libraryy;
+package org.example.model;
 
 //BOOK class
 public class Book {
