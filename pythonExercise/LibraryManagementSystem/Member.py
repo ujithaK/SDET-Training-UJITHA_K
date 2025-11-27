@@ -21,5 +21,13 @@ class Member(Person):
             book.set_availability(False)
             print(f"{self._name} borrowed '{book.get_title()}'.")
 
+    def return_book(self, book):
+        if book not in self._borrowed_books:
+            print("This book was not borrowed by the member.")
+        else:
+            self._borrowed_books.remove(book)
+            book.set_availability(True)
+            print(f"{self._name} returned '{book.get_title()}'.")
+
 
 

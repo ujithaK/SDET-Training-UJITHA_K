@@ -28,6 +28,7 @@ lib.lend_book("ISBN002", "M002")
 lib.lend_book("ISBN001", "M002") 
 
 # Returning books
+lib.return_book("ISBN001", "M001")
 
 lib.lend_book("ISBN001", "M002")  
 
