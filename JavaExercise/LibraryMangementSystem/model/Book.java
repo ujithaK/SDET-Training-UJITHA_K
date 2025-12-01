@@ -1,36 +1,56 @@
 package org.example.model;
 
-//BOOK class
+// BOOK Class
 public class Book {
+    private String bookId;
     private String title;
     private String author;
-    private String isbn;
-    private boolean available;
+    private boolean isAvailable;
 
-    public Book(String title, String author, String isbn) {
+    public Book(String bookId, String title, String author) {
+        this.bookId = bookId;
         this.title = title;
         this.author = author;
-        this.isbn = isbn;
-        this.available = true;
+        this.isAvailable = true;
     }
 
-    // Gettermethods
+    // Getters & Setters
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
     public String getTitle() {
         return title;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getAuthor() {
         return author;
     }
-    public String getIsbn() {
-        return isbn;
-    }
-    public boolean isAvailable() {
-        return available;
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    // Settermethod
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    // Methods
+    public void markAvailable() {
+        this.isAvailable = true;
+    }
+
+    public void markUnavailable() {
+        this.isAvailable = false;
     }
 }
+
 

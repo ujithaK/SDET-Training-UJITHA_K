@@ -1,31 +1,50 @@
 package org.example.model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Member {
-    private String name;
     private String memberId;
-    private HashMap<String, String> borrowedBooks; // isbn : issueDate (yyyy-mm-dd)
+    private String name;
+    private List<Book> issuedBooks;
 
-    public Member(String name, String memberId) {
-        this.name = name;
+    public Member(String memberId, String name) {
         this.memberId = memberId;
-        this.borrowedBooks = new HashMap<>();
+        this.name = name;
+        this.issuedBooks = new ArrayList<>();
     }
 
-    public String getName() { return name; }
-    public String getMemberId() { return memberId; }
-
-    public void borrowBook(String isbn, String issueDate) {
-        borrowedBooks.put(isbn, issueDate);
+    // Getters & Setters
+    public String getMemberId() {
+        return memberId;
     }
 
-    public String returnBook(String isbn) {
-        return borrowedBooks.remove(isbn);
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
-    public HashMap<String, String> getBorrowedBooks() {
-        return borrowedBooks;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Book> getIssuedBooks() {
+        return issuedBooks;
+    }
+
+    // Business Methods
+    public void issueBook(Book book) {
+        issuedBooks.add(book);
+        book.markUnavailable();
+    }
+
+    public void returnBook(Book book) {
+        issuedBooks.remove(book);
+        book.markAvailable();
     }
 }
+
 

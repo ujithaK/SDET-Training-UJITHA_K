@@ -1,20 +1,21 @@
-package org.example.Arrayylist;
+package org.example.CollectionsOperations;
 
 import java.util.*;
 
-public class ArrayListOperations {
+public class CollectionsOperation {
     public static void ArrayListt() {
         Scanner s = new Scanner(System.in);
         List<String> list = new ArrayList<>();
         int choice;
 
         do {
-            System.out.println("Select option");
+            System.out.println("Select option First add items to do the operations");
             System.out.println("1. Add Items");
             System.out.println("2. Search Item");
             System.out.println("3. Remove by Index");
-            System.out.println("4. Sort List");
-            System.out.println("5. Exit");
+            System.out.println("4 Remove by value");
+            System.out.println("5. Sort List");
+            System.out.println("6 Exit");
             System.out.print("Enter your choice: ");
             choice = s.nextInt();
 
@@ -33,7 +34,7 @@ public class ArrayListOperations {
                     System.out.print("Enter name to search: ");
                     String searchItem = s.next();
                     if (list.contains(searchItem)) {
-                        System.out.println(searchItem + " found at index " + list.indexOf(searchItem));
+                        System.out.println(searchItem + " found ");
                     } else {
                         System.out.println(searchItem + " not found.");
                     }
@@ -43,7 +44,7 @@ public class ArrayListOperations {
                     System.out.print("Enter index to remove: ");
                     int index = s.nextInt();
                     if (index >= 0 && index < list.size()) {
-                        System.out.println("Removed: " + list.remove(index));
+                        list.remove(index);
                         System.out.println("Updated List: " + list);
                     } else {
                         System.out.println("Invalid index!");
@@ -51,11 +52,22 @@ public class ArrayListOperations {
                     break;
 
                 case 4:
+                    System.out.print("Enter value to remove: ");
+                    String value = s.next();
+                    if (value!=null) {
+                        list.remove(value);
+                        System.out.println("Updated List: " + list);
+                    } else {
+                        System.out.println("Invalid valuee or value might be null!");
+                    }
+                    break;
+
+                case 5:
                     Collections.sort(list);
                     System.out.println("List sorted: " + list);
                     break;
 
-                case 5:
+                case 6:
                     System.out.println("Exiting...");
                     break;
 
@@ -63,7 +75,7 @@ public class ArrayListOperations {
                     System.out.println("Invalid choice! Please try again.");
             }
 
-        } while (choice != 5);
+        } while (choice != 6);
     }
 
     public static void hashmapp(){
@@ -105,61 +117,63 @@ public class ArrayListOperations {
 
     }
     public static void hashsett(){
-                // Create HashSet
-                HashSet<String> set = new HashSet<>();
+        // Create HashSet
+        HashSet<String> set = new HashSet<>();
 
-                //Adding items
-                set.add("ujitha");
-                set.add("manasa");
-                set.add("ujitha");
-                set.add("padma");
-                set.add("padma");
-                set.add("Gayathri");
-
-
-                System.out.println(set);
+        //Adding items
+        set.add("ujitha");
+        set.add("manasa");
+        set.add("ujitha");
+        set.add("padma");
+        set.add("padma");
+        set.add("Gayathri");
 
 
-                // Iterate items
-
-                System.out.println("\nIterating through items:");
-                for (String item : set) {
-                    System.out.println(item);
-                }
+        System.out.println(set);
 
 
-                // Check contains()
+        // Iterate items
 
-                String search = "ujitha";
-                if (set.contains(search)) {
-                    System.out.println("\nSet contains: " + search);
-                } else {
-                    System.out.println("\nSet does NOT contain: " + search);
-                }
-            }
-    public static void performanceComparision() {
+        System.out.println("\nIterating through items:");
+        for (String item : set) {
+            System.out.println(item);
+        }
+
+
+        // Check contains()
+
+        String search = "ujitha";
+        if (set.contains(search)) {
+            System.out.println("\nSet contains: " + search);
+        } else {
+            System.out.println("\nSet does NOT contain: " + search);
+        }
+    }
+    public static void performanceComparison() {
         Scanner sc = new Scanner(System.in);
         Queue<String> queue = new LinkedList<>();
         int ch;
 
         do {
-            System.out.println("\n1. Queue (LinkedList)");
-            System.out.println("2. ArrayList vs LinkedList");
-            System.out.println("3. HashSet vs ArrayList (Search)");
-            System.out.println("4. Exit");
+            System.out.println("\n==== Performance Comparison Menu ====");
+            System.out.println("1. Queue (LinkedList)");
+            System.out.println("2. ArrayList vs LinkedList (add/search/remove)");
+            System.out.println("3. HashSet vs ArrayList (search)");
+            System.out.println("4. HashMap vs ArrayList (lookup)");
+            System.out.println("5. Exit");
             System.out.print("Enter choice: ");
             ch = sc.nextInt();
 
             switch (ch) {
-                // Queue
-                case 1:
-                    System.out.print("Enter item to add: ");
-                    queue.add(sc.next());
-                    System.out.println( queue.poll());
-                    System.out.println(queue.peek());
-                    System.out.println(queue);
-                    break;
 
+                // Queue operations
+                case 1:
+                    System.out.print("Enter item to add to Queue: ");
+                    queue.add(sc.next());
+                    System.out.println("Removed from Queue (poll): " + queue.poll());
+                    System.out.println("Peek at Queue: " + queue.peek());
+                    System.out.println("Current Queue: " + queue);
+                    break;
 
                 // ArrayList vs LinkedList
                 case 2:
@@ -167,20 +181,43 @@ public class ArrayListOperations {
                     List<Integer> al = new ArrayList<>();
                     List<Integer> ll = new LinkedList<>();
 
+                    // Add
                     long t1 = System.nanoTime();
                     for (int i = 0; i < n; i++) al.add(i);
                     long t2 = System.nanoTime();
-                    System.out.println("ArrayList time taken to add : " + (t2 - t1));
-//  t2=end time and t1 start time(end-start)
+                    System.out.println("ArrayList adding elements time: " + (t2 - t1) + " ns");
+
                     t1 = System.nanoTime();
                     for (int i = 0; i < n; i++) ll.add(i);
                     t2 = System.nanoTime();
-                    System.out.println("LinkedList time taken to add: " + (t2 - t1));
+                    System.out.println("LinkedList adding elements time: " + (t2 - t1) + " ns");
 
+                    // ArrayList vs LinkedList: SEARCH
+                    t1 = System.nanoTime();
+                    al.contains(n - 1);
+                    t2 = System.nanoTime();
+                    System.out.println("ArrayList searching element time: " + (t2 - t1) + " ns");
+
+                    t1 = System.nanoTime();
+                    ll.contains(n - 1);
+                    t2 = System.nanoTime();
+                    System.out.println("LinkedList searching an element time: " + (t2 - t1) + " ns");
+
+
+                     //ArrayList vs LinkedList: REMOVE
+                    // Remove last element
+                    t1 = System.nanoTime();
+                    al.remove(al.size() - 1);
+                    t2 = System.nanoTime();
+                    System.out.println("Time took by ArrayList to remove last element: " + (t2 - t1) + " ns");
+
+                    t1 = System.nanoTime();
+                    ll.remove(ll.size() - 1);
+                    t2 = System.nanoTime();
+                    System.out.println("Time took by LinkedList to remove last element:: " + (t2 - t1) + " ns");
                     break;
 
-                // HashSet vs ArrayList
-
+                // HashSet vs ArrayList search
                 case 3:
                     ArrayList<Integer> arr = new ArrayList<>();
                     HashSet<Integer> set = new HashSet<>();
@@ -192,25 +229,62 @@ public class ArrayListOperations {
                     t1 = System.nanoTime();
                     arr.contains(49999);
                     t2 = System.nanoTime();
-                    System.out.println("ArrayList search: " + (t2 - t1));
+                    System.out.println("ArrayList search time: " + (t2 - t1) + " ns");
 
                     t1 = System.nanoTime();
                     set.contains(49999);
                     t2 = System.nanoTime();
-                    System.out.println("HashSet search: " + (t2 - t1));
+                    System.out.println("HashSet search time: " + (t2 - t1) + " ns");
                     break;
 
+                // HashMap vs List: LOOKUP
                 case 4:
-                    System.out.println("Bye!");
-                    break;
-            }
+                    int size = 50000;
+                    HashMap<Integer, String> map = new HashMap<>();
+                    ArrayList<String> list = new ArrayList<>();
 
-        } while (ch != 4);
+                    for (int i = 0; i < size; i++) {
+                        map.put(i, "Value" + i);
+                        list.add("Value" + i);
+                    }
+
+                    // HashMap lookup
+                    t1 = System.nanoTime();
+                    map.get(49999);
+                    t2 = System.nanoTime();
+                    System.out.println("HashMap lookup by key: " + (t2 - t1) + " ns");
+
+                    // ArrayList lookup by index
+                    t1 = System.nanoTime();
+                    list.get(49999);
+                    t2 = System.nanoTime();
+                    System.out.println("ArrayList lookup by index: " + (t2 - t1) + " ns");
+
+                    // ArrayList lookup by value
+                    t1 = System.nanoTime();
+                    list.contains("Value49999");
+                    t2 = System.nanoTime();
+                    System.out.println("ArrayList lookup by value (contains): " + (t2 - t1) + " ns");
+                    break;
+
+                case 5:
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Try again.");
+            }
+        } while (ch != 5);
+
+        sc.close();
     }
-    static void main(String[] args) {
-//        ArrayListt();
+
+public static void main(String[] args) {
+        ArrayListt();
 //        hashmapp();
 //        hashsett();
-//        performanceComparision();
-    }
+//   performanceComparison();
+
 }
+}
+

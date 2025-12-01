@@ -1,39 +1,128 @@
 package org.example.model;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Transaction {
 
-    private ArrayList<String> logs = new ArrayList<>();
+    private String transactionId;
+    private String bookId;
+    private String memberId;
+    private String issueDate;
+    private String returnDate;
+    private int fineAmount;
+    int fine = 0;
 
-    public void issueBook(Member member, Book book, String issueDate) {
-        logs.add( book.getTitle() + "is given to "
-                + member.getName() + " on " + issueDate);
+    private List<Transaction> logs = new ArrayList<>();
+
+    public Transaction() {}
+
+    public Transaction(String transactionId, String bookId, String memberId,
+                       String issueDate, String returnDate, int fineAmount) {
+        this.transactionId = transactionId;
+        this.bookId = bookId;
+        this.memberId = memberId;
+        this.issueDate = issueDate;
+        this.returnDate = returnDate;
+        this.fineAmount = fineAmount;
     }
 
-    public int returnBook(Member member, Book book, String issueDate, String returnDate) {
-        long d1 = Long.parseLong(issueDate.substring(8));
-        long d2 =Long.parseLong(returnDate.substring(8));
+    // ISSUE
+    public void issueBook(Member member, Book book, String issueDate) {
 
-//        System.out.println(d1 +" "+ d2);
+        Transaction t = new Transaction(
+                "TXN"+Math.round(Math.random()*10) ,
+                book.getBookId(),
+                member.getMemberId(),
+                issueDate,
+                null,
+                0
+        );
 
-        long days = d2-d1;
-//        System.out.println("days" + days);
-        int fine = 0;
+        logs.add(t);
+        System.out.println(book.getTitle() + " issued to " + member.getName() + " on " + issueDate);
+    }
 
-        if (days > 14) {
-            fine = (int)((days - 14) * 5); //here 5 is fine per day
+    //RETURN
+    public int returnBook(Member member, Book book, String returnDate) {
+
+        String issueDate = null;
+
+        // Finding last transaction for this book-member
+        for (Transaction t : logs) {
+            if (t.bookId.equals(book.getBookId()) && t.memberId.equals(member.getMemberId()) && t.returnDate == null) {
+                issueDate = t.issueDate;
+                break;
+            }
         }
 
-        logs.add( book.getTitle() + " is returned by "
-                + member.getName() + " on " + returnDate + " with fine amount: ₹" + fine);
+        if (issueDate == null) {
+            System.out.println("Error: No matching issue transaction found.");
+            return 0;
+        }
+
+        // Calculate fine
+
+        int d1= Integer.parseInt(returnDate.substring(8));
+        int d2= Integer.parseInt(issueDate.substring(8));
+
+        int days = d1-d2;
+
+
+        if (days > 14) {
+            fine = ((days - 14) * 5); // ₹5 per late day
+        }
+
+        // Add return transaction entry
+        Transaction t = new Transaction(
+                "TXN" + System.currentTimeMillis(),
+                book.getBookId(),
+                member.getMemberId(),
+                issueDate,
+                returnDate,
+                fine
+        );
+
+        logs.add(t);
 
         return fine;
     }
 
+    //CalculateFine..
+     public void calculateFine(String returnDate,String issueDate){
+         // Calculate fine
+
+         int d1= Integer.parseInt(returnDate.substring(8));
+         int d2= Integer.parseInt(issueDate.substring(8));
+
+         int days = d1-d2;
+
+
+         if (days > 14) {
+             fine = ((days - 14) * 5); // ₹5 per late day
+         }
+         System.out.println(fine);
+
+     }
+    // SHOW ALL LOGS
     public void showLogs() {
 
-            System.out.println(logs);
+        if (logs.isEmpty()) {
+            System.out.println("No transactions yet.");
+            return;
+        }
+
+        for (Transaction t : logs) {
+            System.out.println(
+                    "\nTransaction ID: " + t.transactionId +
+                            "\nBook ID: " + t.bookId +
+                            "\nMember ID: " + t.memberId +
+                            "\nIssued: " + t.issueDate +
+                            "\nReturned: " + (t.returnDate == null ? "Not returned yet" : t.returnDate) +
+                            "\nFine: ₹" + t.fineAmount
+            );
+        }
     }
 }
-
