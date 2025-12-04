@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AutomationSuite" parallel="methods" thread-count="4">
+
+    <!-- GROUP CONFIGURATION -->
+    <groups>
+        <run>
+            <include name="login" />
+            <include name="regression" />
+
+            <exclude name="logout" />
+        </run>
+    </groups>
+
+    <!-- TEST BLOCK -->
+    <test name="FunctionalTests">
+
+        <classes>
+            <class name="TestNGBasicsDemo" />
+        </classes>
+
+    </test>
+
+</suite>
