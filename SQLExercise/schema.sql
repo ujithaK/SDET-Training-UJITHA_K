@@ -1,6 +1,7 @@
 CREATE DATABASE Social_media_db;
 USE Social_media_db;
 
+-- USERS TABLE
 CREATE TABLE tUser (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -13,16 +14,18 @@ CREATE TABLE tUser (
     last_login TIMESTAMP
 );
 
+-- FRIENDS TABLE 
 CREATE TABLE tFriends (
     friendship_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
     friend_id INT,
     status ENUM('pending', 'accepted', 'blocked'),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES tUser(user_id),
-    FOREIGN KEY (friend_id) REFERENCES tUser(user_id)
+    FOREIGN KEY (user_id) REFERENCES tUser(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (friend_id) REFERENCES tUser(user_id) ON DELETE CASCADE
 );
 
+-- POSTS TABLE 
 CREATE TABLE tPosts (
     post_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
@@ -30,20 +33,21 @@ CREATE TABLE tPosts (
     image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     likes_count INT DEFAULT 0,
-    FOREIGN KEY (user_id) REFERENCES tUser(user_id)
+    FOREIGN KEY (user_id) REFERENCES tUser(user_id) ON DELETE CASCADE
 );
 
+-- COMMENTS TABLE 
 CREATE TABLE tComments (
     comment_id INT PRIMARY KEY AUTO_INCREMENT,
     post_id INT,
     user_id INT,
     comment_text TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (post_id) REFERENCES tPosts(post_id),
-    FOREIGN KEY (user_id) REFERENCES tUser(user_id)
+    FOREIGN KEY (post_id) REFERENCES tPosts(post_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES tUser(user_id) ON DELETE CASCADE
 );
 
--- Updated user data
+-- INSERT USER DATA
 INSERT INTO tUser (username, email, password_hash, full_name, date_of_birth, phone, last_login)
 VALUES
 ('ujitha', 'ujitha@gmail.com', 'uji321', 'Ujitha Reddy', '2003-10-14', '9876543210', NOW()),
@@ -53,7 +57,7 @@ VALUES
 ('padma', 'padma@gmail.com', 'pass567', 'Padmapadhu', '2002-05-09', '9976512345', NOW()),
 ('gayathri', 'gayathri@gmail.com', 'gayi765', 'Gayathri', '2004-02-12', '9676534567', NOW());
 
--- Friend relationships
+-- FRIEND RELATIONSHIPS
 INSERT INTO tFriends (user_id, friend_id, status)
 VALUES
 (1, 2, 'accepted'),
@@ -64,7 +68,7 @@ VALUES
 (5, 6, 'accepted'),
 (6, 1, 'accepted');
 
--- Updated posts
+-- POSTS
 INSERT INTO tPosts (user_id, content, image_url, likes_count)
 VALUES
 (1, 'Exploring new places while travelling!', NULL, 15),
@@ -74,7 +78,7 @@ VALUES
 (5, 'Being a true foodie today 🍜', NULL, 8),
 (6, 'Another travelling adventure begins 🌍', 'travel2.jpg', 18);
 
--- Comments
+-- COMMENTS
 INSERT INTO tComments (post_id, user_id, comment_text)
 VALUES
 (1, 2, 'That’s awesome, Ujitha!'),
