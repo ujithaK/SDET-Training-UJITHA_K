@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fec9a9b6-7787-40b7-924e-b6c292afba73" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ujithaK&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ujithaK/SDET-Training-UJITHA_K.git&quot;,
+    &quot;accountId&quot;: &quot;b3c7f9d5-60f1-4dc8-83d1-8fde4019c141&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="36xY7iaQRnLSZYkpkRdHkNPiY60" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.AuthCRUDTest.executor": "Run",
+    "TestNG.Login_Test.executor": "Run",
+    "TestNG.PetTests.executor": "Run",
+    "TestNG.PetTests.uploadPetImage.executor": "Run",
+    "TestNG.ReqResCRUDTest (1).executor": "Run",
+    "TestNG.ReqResCRUDTest.createUser.executor": "Run",
+    "TestNG.ReqResCRUDTest.executor": "Run",
+    "TestNG.ReqResCRUDTest.getAllUsers.executor": "Run",
+    "TestNG.ReqResCRUDTest.getSingleUser.executor": "Run",
+    "TestNG.ReqResCRUDTest.updateUser.executor": "Run",
+    "TestNG.ReqResCRUDTest.verifyUpdatedUser.executor": "Run",
+    "TestNG.UserTests.deleteUser.executor": "Run",
+    "TestNG.UserTests.executor": "Run",
+    "TestNG.UserTests.getUserTest.executor": "Run",
+    "TestNG.UserTests.postUser.executor": "Run",
+    "TestNG.UserTests.updateUser.executor": "Run",
+    "TestNG.UsersValidationTest.executor": "Run",
+    "git-widget-placeholder": "selenium",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/SDET_Training_UJITHA_K/MobileTesting/REST-Assured/src/main/java/org/example/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Validation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.PetTests.uploadPetImage">
+    <configuration name="PetTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Assured" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Advance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Advance" />
+      <option name="MAIN_CLASS_NAME" value="Advance.PetTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PetTests.uploadPetImage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Assured" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Advance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Advance" />
+      <option name="MAIN_CLASS_NAME" value="Advance.PetTests" />
+      <option name="METHOD_NAME" value="uploadPetImage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTests.deleteUser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Assured" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="reusablefwcomponents.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="base" />
+      <option name="MAIN_CLASS_NAME" value="reusablefwcomponents.UserTests" />
+      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTests.getUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Assured" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="reusablefwcomponents.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="base" />
+      <option name="MAIN_CLASS_NAME" value="reusablefwcomponents.UserTests" />
+      <option name="METHOD_NAME" value="getUserTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTests.updateUser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Assured" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="reusablefwcomponents.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="base" />
+      <option name="MAIN_CLASS_NAME" value="reusablefwcomponents.UserTests" />
+      <option name="METHOD_NAME" value="updateUser" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.PetTests.uploadPetImage" />
+        <item itemvalue="TestNG.PetTests" />
+        <item itemvalue="TestNG.UserTests.deleteUser" />
+        <item itemvalue="TestNG.UserTests.updateUser" />
+        <item itemvalue="TestNG.UserTests.getUserTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fec9a9b6-7787-40b7-924e-b6c292afba73" name="Changes" comment="" />
+      <created>1765949524529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765949524529</updated>
+    </task>
+    <servers />
+  </component>
+</project>
