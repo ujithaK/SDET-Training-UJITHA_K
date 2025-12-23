@@ -3,7 +3,7 @@
 let namee: string = "Ujitha";
 let age: number = 22;
 let isActive: boolean = true;
- //Arrya
+ //Arrays
 let scores: number[] = [10, 20, 30];
 let names: Array<string> = ["A", "B"];
 
@@ -71,17 +71,17 @@ const user: User = {
 
      
 
-    // Typescript code &7 Run this command to convert the typeScript code into javascript code :- npx tsc 
-    function add(a: number, b: number): number {
+    // Typescript code & Run this command to convert the typeScript code into javascript code :- npx tsc 
+  function add(a: number, b: number): number {
     return a + b;
-    }
+  }
 
 
 
-    interface User {
-  id: number;
-  name: string;
-}
+  interface User {
+    id: number;
+    name: string;
+  }
 
 async function getUsers(): Promise<User[]> {
   const res = await fetch("");
