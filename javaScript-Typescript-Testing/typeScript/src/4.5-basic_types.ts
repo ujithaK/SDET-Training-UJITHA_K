@@ -1,8 +1,8 @@
-// Basic Data Types in TypeScript
+// basic_types.ts
 
 // String
 let fname: string = "Ujitha";
-console.log("Name:", name);
+console.log("Name:", fname);
 
 // Number
 let age: number = 25;
@@ -16,20 +16,32 @@ console.log("Is Student:", isStudent);
 let scores: number[] = [90, 85, 70];
 console.log("Scores:", scores);
 
-let names: string[] = ["Alice", "Bob"];
-console.log("Names:", names);
+// Interface (object with type)
+interface Person {
+  name: string;
+  age: number;
+}
 
-// Tuple
-let personTuple: [string, number] = ["Alice", 30];
-console.log("Person Tuple:", personTuple);
+const student: Person = {
+  name: "Alice",
+  age: 22,
+};
+console.log("Student:", student);
 
-// Enum
-enum Color { Red, Green, Blue }
-let favoriteColor: Color = Color.Green;
-console.log("Favorite Color:", favoriteColor);
+// Class with types
+class Animals {
+  name: string;
+  age: number;
 
-// Any
-let randomValue: any = 10;
-console.log("Random Value:", randomValue);
-randomValue = "Hello";
-console.log("Random Value Changed:", randomValue);
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  speak(): void {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+const dogs = new Animal("Buddy", 3);
+dog.speak();

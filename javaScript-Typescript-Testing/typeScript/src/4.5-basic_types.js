@@ -1,7 +1,7 @@
-// Basic Data Types in TypeScript
+// basic_types.ts
 // String
 var fname = "Ujitha";
-console.log("Name:", name);
+console.log("Name:", fname);
 // Number
 var age = 25;
 console.log("Age:", age);
@@ -11,22 +11,21 @@ console.log("Is Student:", isStudent);
 // Array
 var scores = [90, 85, 70];
 console.log("Scores:", scores);
-var names = ["Alice", "Bob"];
-console.log("Names:", names);
-// Tuple
-var personTuple = ["Alice", 30];
-console.log("Person Tuple:", personTuple);
-// Enum
-var Color;
-(function (Color) {
-    Color[Color["Red"] = 0] = "Red";
-    Color[Color["Green"] = 1] = "Green";
-    Color[Color["Blue"] = 2] = "Blue";
-})(Color || (Color = {}));
-var favoriteColor = Color.Green;
-console.log("Favorite Color:", favoriteColor);
-// Any
-var randomValue = 10;
-console.log("Random Value:", randomValue);
-randomValue = "Hello";
-console.log("Random Value Changed:", randomValue);
+var student = {
+    name: "Alice",
+    age: 22,
+};
+console.log("Student:", student);
+// Class with types
+var Animals = /** @class */ (function () {
+    function Animals(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Animals.prototype.speak = function () {
+        console.log("".concat(this.name, " makes a sound."));
+    };
+    return Animals;
+}());
+var dogs = new Animal("Buddy", 3);
+dogs.speak();
