@@ -1,7 +1,10 @@
-package reusablefwcomponents;
-
+package reusablefwcomponents.api;
 
 import io.restassured.response.Response;
+import reusablefwcomponents.RestAssuredConfig;
+
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class ApiMethods {
@@ -16,7 +19,6 @@ public class ApiMethods {
                 .extract()
                 .response();
     }
-
     public static Response post(String endpoint, Object body) {
         return given()
                 .spec(RestAssuredConfig.requestSpec)
@@ -52,4 +54,3 @@ public class ApiMethods {
                 .response();
     }
 }
-
