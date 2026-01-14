@@ -1,11 +1,11 @@
 package reusablefwcomponents;
 
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-
-import static io.restassured.http.ContentType.JSON;
 
 public class RestAssuredConfig {
 
@@ -15,15 +15,16 @@ public class RestAssuredConfig {
     public static ResponseSpecification responseSpec;
 
     static {
-        // Request Specification
+        RestAssured.baseURI = BASE_URI;
+
         requestSpec = new RequestSpecBuilder()
-                .setBaseUri(BASE_URI)
-                .setContentType(JSON)
+                .setRelaxedHTTPSValidation()
+                .setContentType(ContentType.JSON)
+                .setAccept(ContentType.JSON)
                 .build();
 
-        // Response Specification
         responseSpec = new ResponseSpecBuilder()
-                .expectContentType(JSON)
+                .expectContentType(ContentType.JSON)
                 .build();
     }
 }
