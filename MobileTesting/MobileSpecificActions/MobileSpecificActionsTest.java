@@ -54,7 +54,8 @@ public class MobileSpecificActionsTest {
         System.out.println("App back to foreground");
 
         // 3️ Handle Notifications / Alerts
-
+        
+        validatePushNotificationHandling();
         try {
             driver.switchTo().alert().accept();
             System.out.println("Alert accepted");
@@ -73,7 +74,41 @@ public class MobileSpecificActionsTest {
         driver.rotate(ScreenOrientation.PORTRAIT);
         System.out.println("Current orientation: " + driver.getOrientation());
     }
-
+    public void validatePushNotificationHandling() {
+        // Open notification panel
+        driver.openNotifications();
+        System.out.println("Notification panel opened");
+        WebDriverWait notificationWait =
+                new WebDriverWait(driver, Duration.ofSeconds(15));
+        // Locate notification by partial text
+        WebElement notification =
+                notificationWait.until(
+                        ExpectedConditions.presenceOfElementLocated(
+                                AppiumBy.androidUIAutomator(
+                                        "new UiSelector().textContains(\"Api\")"
+                                )
+                        )
+                );
+        // Validate notification content
+        String notificationText = notification.getText();
+        System.out.println("Notification received: " + notificationText);
+        Assert.assertTrue(notificationText.length() > 0,
+                "Notification content is empty");
+        // Tap on notification
+        notification.click();
+        System.out.println("Notification clicked");
+        // Validate app behavior after tapping notification
+        WebElement views =
+                notificationWait.until(
+                        ExpectedConditions.presenceOfElementLocated(
+                                AppiumBy.androidUIAutomator(
+                                        "new UiSelector().text(\"Views\")"
+                                )
+                        )
+                );
+        Assert.assertTrue(views.isDisplayed(),
+                "App did not navigate correctly after notification click");
+    }
     @AfterClass
     public void tearDown() {
         if (driver != null) {
