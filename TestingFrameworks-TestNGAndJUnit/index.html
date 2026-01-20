@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-WindowsFrames_Suite" class="navigator-link">
+              <span class="suite-name border-failed">WindowsFrames Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-WindowsFrames_Suite" class="navigator-link ">
+                    <span>C:\Users\Ujitha K\IdeaProjects\WindowsFrames\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-WindowsFrames_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-WindowsFrames_Suite" class="navigator-link ">
+                    <span>5 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-WindowsFrames_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-WindowsFrames_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-WindowsFrames_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-WindowsFrames_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">17 methods, 2 failed,   15 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-WindowsFrames_Suite" class="hide-methods failed suite-WindowsFrames_Suite"> (hide)</a> <!-- hide-methods failed suite-WindowsFrames_Suite -->
+                      <a href="#" panel-name="suite-WindowsFrames_Suite" class="show-methods failed suite-WindowsFrames_Suite"> (show)</a> <!-- show-methods failed suite-WindowsFrames_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-WindowsFrames_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="datadriven.ExcelDataTest" class="method navigator-link" hash-for-method="excelTest">excelTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="TestNGBasicsDemo" class="method navigator-link" hash-for-method="testSoftAssertions">testSoftAssertions</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-WindowsFrames_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-WindowsFrames_Suite" class="hide-methods passed suite-WindowsFrames_Suite"> (hide)</a> <!-- hide-methods passed suite-WindowsFrames_Suite -->
+                      <a href="#" panel-name="suite-WindowsFrames_Suite" class="show-methods passed suite-WindowsFrames_Suite"> (show)</a> <!-- show-methods passed suite-WindowsFrames_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-WindowsFrames_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="dependencies.DependencyTest" class="method navigator-link" hash-for-method="cleanupTest">cleanupTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="dependencies.DependencyTest" class="method navigator-link" hash-for-method="dashboardTest">dashboardTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="dependencies.DependencyTest" class="method navigator-link" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="dependencies.DependencyTest" class="method navigator-link" hash-for-method="openBrowser">openBrowser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="dependencies.DependencyTest" class="method navigator-link" hash-for-method="runAfterSmokeGroup">runAfterSmokeGroup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="tests.WindowsAndFramesTest" class="method navigator-link" hash-for-method="test1_windowHandling">test1_windowHandling</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="tests.WindowsAndFramesTest" class="method navigator-link" hash-for-method="test3_iframeByName">test3_iframeByName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="tests.WindowsAndFramesTest" class="method navigator-link" hash-for-method="test4_iframeByWebElement">test4_iframeByWebElement</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="tests.DynamicElementsRealWebsiteTest" class="method navigator-link" hash-for-method="testDynamicElements">testDynamicElements</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="seleniumTestNG.SeleniumIntegrationTest" class="method navigator-link" hash-for-method="testGoogleTitle">testGoogleTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="seleniumTestNG.SeleniumIntegrationTest" class="method navigator-link" hash-for-method="testGoogleURL">testGoogleURL</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="TestNGBasicsDemo" class="method navigator-link" hash-for-method="testLoginHardAssert">testLoginHardAssert</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="TestNGBasicsDemo" class="method navigator-link" hash-for-method="testLogout">testLogout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="TestNGBasicsDemo" class="method navigator-link" hash-for-method="testSearch">testSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-WindowsFrames_Suite" title="tests.WindowsAndFramesTest" class="method navigator-link" hash-for-method="test_frame_by_index">test_frame_by_index</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-WindowsFrames_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-WindowsFrames_Suite" class="panel WindowsFrames_Suite">
+          <div class="suite-WindowsFrames_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestNGBasicsDemo</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSoftAssertions">
+                  </a> <!-- testSoftAssertions -->
+                  <span class="method-name">testSoftAssertions</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	String mismatch! expected [Hi] but found [Hello],
+	Condition is false! expected [true] but found [false],
+	Values not equal! expected [20] but found [10]
+	at TestNGBasicsDemo.testSoftAssertions(TestNGBasicsDemo.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-failed -->
+          <div class="suite-WindowsFrames_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">datadriven.ExcelDataTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="excelTest">
+                  </a> <!-- excelTest -->
+                  <span class="method-name">excelTest</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Data Provider public java.lang.Object[][] datadriven.ExcelDataTest.excelDataProvider() returned a null value
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-failed -->
+          <div class="suite-WindowsFrames_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">seleniumTestNG.SeleniumIntegrationTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGoogleTitle">
+                  </a> <!-- testGoogleTitle -->
+                  <span class="method-name">testGoogleTitle</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGoogleURL">
+                  </a> <!-- testGoogleURL -->
+                  <span class="method-name">testGoogleURL</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-passed -->
+          <div class="suite-WindowsFrames_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestNGBasicsDemo</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLoginHardAssert">
+                  </a> <!-- testLoginHardAssert -->
+                  <span class="method-name">testLoginHardAssert</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogout">
+                  </a> <!-- testLogout -->
+                  <span class="method-name">testLogout</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearch">
+                  </a> <!-- testSearch -->
+                  <span class="method-name">testSearch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-passed -->
+          <div class="suite-WindowsFrames_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.DynamicElementsRealWebsiteTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDynamicElements">
+                  </a> <!-- testDynamicElements -->
+                  <span class="method-name">testDynamicElements</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-passed -->
+          <div class="suite-WindowsFrames_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">dependencies.DependencyTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="cleanupTest">
+                  </a> <!-- cleanupTest -->
+                  <span class="method-name">cleanupTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dashboardTest">
+                  </a> <!-- dashboardTest -->
+                  <span class="method-name">dashboardTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="openBrowser">
+                  </a> <!-- openBrowser -->
+                  <span class="method-name">openBrowser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runAfterSmokeGroup">
+                  </a> <!-- runAfterSmokeGroup -->
+                  <span class="method-name">runAfterSmokeGroup</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-passed -->
+          <div class="suite-WindowsFrames_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.WindowsAndFramesTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test1_windowHandling">
+                  </a> <!-- test1_windowHandling -->
+                  <span class="method-name">test1_windowHandling</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test3_iframeByName">
+                  </a> <!-- test3_iframeByName -->
+                  <span class="method-name">test3_iframeByName</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test4_iframeByWebElement">
+                  </a> <!-- test4_iframeByWebElement -->
+                  <span class="method-name">test4_iframeByWebElement</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_frame_by_index">
+                  </a> <!-- test_frame_by_index -->
+                  <span class="method-name">test_frame_by_index</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WindowsFrames_Suite-class-passed -->
+        </div> <!-- panel WindowsFrames_Suite -->
+        <div panel-name="test-xml-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Ujitha K\IdeaProjects\WindowsFrames\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;WindowsFrames Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;listeners.MyTestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;All Selenium Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;seleniumTestNG.SeleniumIntegrationTest&quot;/&gt;
+      &lt;class name=&quot;datadriven.ExcelDataTest&quot;/&gt;
+      &lt;class name=&quot;dependencies.DependencyTest&quot;/&gt;
+      &lt;class name=&quot;tests.DynamicElementsRealWebsiteTest&quot;/&gt;
+      &lt;class name=&quot;tests.WindowsAndFramesTest&quot;/&gt;
+      &lt;class name=&quot;TestNGBasicsDemo&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- All Selenium Tests --&gt;
+&lt;/suite&gt; &lt;!-- WindowsFrames Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for WindowsFrames Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">All Selenium Tests (6 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for WindowsFrames Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">login</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testLoginHardAssert</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">logout</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testLogout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">regression</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testSoftAssertions</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">search</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testSearch</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">smoke</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">openBrowser</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for WindowsFrames Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_WindowsFrames_Suite');
+function tableData_WindowsFrames_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(17);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testDynamicElements')
+data.setCell(0, 2, 'tests.DynamicElementsRealWebsiteTest')
+data.setCell(0, 3, 9010);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test1_windowHandling')
+data.setCell(1, 2, 'tests.WindowsAndFramesTest')
+data.setCell(1, 3, 7506);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_frame_by_index')
+data.setCell(2, 2, 'tests.WindowsAndFramesTest')
+data.setCell(2, 3, 4058);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test4_iframeByWebElement')
+data.setCell(3, 2, 'tests.WindowsAndFramesTest')
+data.setCell(3, 3, 2526);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test3_iframeByName')
+data.setCell(4, 2, 'tests.WindowsAndFramesTest')
+data.setCell(4, 3, 2348);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testGoogleTitle')
+data.setCell(5, 2, 'seleniumTestNG.SeleniumIntegrationTest')
+data.setCell(5, 3, 682);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testGoogleURL')
+data.setCell(6, 2, 'seleniumTestNG.SeleniumIntegrationTest')
+data.setCell(6, 3, 666);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testSoftAssertions')
+data.setCell(7, 2, 'TestNGBasicsDemo')
+data.setCell(7, 3, 14);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'loginTest')
+data.setCell(8, 2, 'dependencies.DependencyTest')
+data.setCell(8, 3, 5);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'runAfterSmokeGroup')
+data.setCell(9, 2, 'dependencies.DependencyTest')
+data.setCell(9, 3, 2);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testLogout')
+data.setCell(10, 2, 'TestNGBasicsDemo')
+data.setCell(10, 3, 1);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'dashboardTest')
+data.setCell(11, 2, 'dependencies.DependencyTest')
+data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testLoginHardAssert')
+data.setCell(12, 2, 'TestNGBasicsDemo')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testSearch')
+data.setCell(13, 2, 'TestNGBasicsDemo')
+data.setCell(13, 3, 0);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'cleanupTest')
+data.setCell(14, 2, 'dependencies.DependencyTest')
+data.setCell(14, 3, 0);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'openBrowser')
+data.setCell(15, 2, 'dependencies.DependencyTest')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'excelTest')
+data.setCell(16, 2, 'datadriven.ExcelDataTest')
+data.setCell(16, 3, 0);
+window.suiteTableData['WindowsFrames_Suite']= { tableData: data, tableDiv: 'times-div-WindowsFrames_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <div id="times-div-WindowsFrames_Suite">
+              </div> <!-- times-div-WindowsFrames_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for WindowsFrames Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-WindowsFrames_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestNGBasicsDemo</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">dependencies.DependencyTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">loginTest</span>
+                <span class="method-start">84 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">cleanupTest</span>
+                <span class="method-start">94 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dashboardTest</span>
+                <span class="method-start">99 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">openBrowser</span>
+                <span class="method-start">102 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runAfterSmokeGroup</span>
+                <span class="method-start">112 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.WindowsAndFramesTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">115 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">test1_windowHandling</span>
+                <span class="method-start">2670 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test3_iframeByName</span>
+                <span class="method-start">10178 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test4_iframeByWebElement</span>
+                <span class="method-start">12531 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.DynamicElementsRealWebsiteTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">15067 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testDynamicElements</span>
+                <span class="method-start">17259 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">26269 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">seleniumTestNG.SeleniumIntegrationTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">26542 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testGoogleTitle</span>
+                <span class="method-start">27473 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">28155 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">28800 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testGoogleURL</span>
+                <span class="method-start">29507 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">30173 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.WindowsAndFramesTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">test_frame_by_index</span>
+                <span class="method-start">30919 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">34977 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestNGBasicsDemo</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">35328 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">35330 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testLoginHardAssert</span>
+                <span class="method-start">35330 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">35331 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">35331 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testSoftAssertions</span>
+                <span class="method-start">35332 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">35347 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">35348 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">35349 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testSearch</span>
+                <span class="method-start">35349 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">35350 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testLogout</span>
+                <span class="method-start">35351 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">35353 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">35354 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">35355 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">35398 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

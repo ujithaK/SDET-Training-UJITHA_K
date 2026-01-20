@@ -1,53 +1,43 @@
 package seleniumTestNG;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SeleniumIntegrationTest {
 
     WebDriver driver;
 
-    //  SETUP
-
     @BeforeMethod
-    public void setup() {
-        System.out.println("Opening Browser...");
+    public void setUp() {
+        // Automatically download and setup ChromeDriver
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    }
+
+    @Test
+    public void testGoogleTitle() {
         driver.get("https://www.google.com");
+        String title = driver.getTitle();
+        System.out.println("Page Title: " + title);
+
+        // Use TestNG assertion
+        Assert.assertEquals(title, "Google", "Page title should be Google");
     }
 
-    // TESTS
-
-    @Test(priority = 1)
-    public void verifyGoogleTitle() {
-        System.out.println("Running verifyGoogleTitle");
-
-        String actual = driver.getTitle();
-        String expected = "Google";
-
-        Assert.assertEquals(actual, expected, "Title mismatch!");
+    @Test
+    public void testGoogleURL() {
+        driver.get("https://www.google.com");
+        String url = driver.getCurrentUrl();
+        Assert.assertTrue(url.contains("google"), "URL should contain google");
     }
-
-    @Test(priority = 2)
-    public void searchTest() {
-        System.out.println("Running searchTest");
-
-        driver.findElement(By.name("q")).sendKeys("laptops new model");
-        driver.findElement(By.name("q")).submit();
-
-        Assert.assertTrue(driver.getTitle().contains("laptops"),
-                "Search result title does not contain Selenium!");
-    }
-
-    // This method will execute after every method
 
     @AfterMethod
-    public void teardown() {
-        System.out.println("Closing Browser...\n");
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }

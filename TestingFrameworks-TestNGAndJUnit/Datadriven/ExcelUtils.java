@@ -1,35 +1,37 @@
-package datadriven;
+package utils;
+
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 
 public class ExcelUtils {
 
-
-    //this entire method is responsibile for reading the excel sheet
     public static Object[][] getExcelData(String filePath, String sheetName) {
-        try {
-            FileInputStream fis = new FileInputStream(filePath);  //read the raw file bytes
-            Workbook wb = new XSSFWorkbook(fis); //used for .xlsx files
-            Sheet sheet = wb.getSheet(sheetName);
+        Object[][] data = null;
 
-            int rows = sheet.getPhysicalNumberOfRows();
-            int cols = sheet.getRow(0).getLastCellNum();
+        try (FileInputStream fis = new FileInputStream(filePath);
+             Workbook workbook = new XSSFWorkbook(fis)) {
 
-            Object[][] data = new Object[rows - 1][cols]; //row-1 because 0th row will be heading row
+            Sheet sheet = workbook.getSheet(sheetName);
+            int rowCount = sheet.getPhysicalNumberOfRows();
+            int colCount = sheet.getRow(0).getLastCellNum();
 
-            for (int i = 1; i < rows; i++) {
+            data = new Object[rowCount - 1][colCount]; // Skip header row
+
+            for (int i = 1; i < rowCount; i++) {
                 Row row = sheet.getRow(i);
-                for (int j = 0; j < cols; j++) {
-                    data[i - 1][j] = row.getCell(j).toString();
+                for (int j = 0; j < colCount; j++) {
+                    Cell cell = row.getCell(j);
+                    data[i - 1][j] = (cell == null) ? "" : cell.toString();
                 }
             }
-            return data;
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+
+        return data;
     }
 }
