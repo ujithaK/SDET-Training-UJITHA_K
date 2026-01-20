@@ -14,7 +14,7 @@ public class LoginSteps {
 
     @Given("the user is on the login page")
     public void loginPage() {
-        System.out.println("User on login page");
+        System.out.println("User is on login page");
     }
 
     @When("the user logs in with valid credentials")
@@ -24,7 +24,7 @@ public class LoginSteps {
 
     @When("the user logs in with {string} and {string}")
     public void loginWithCredentials(String username, String password) {
-        System.out.println("Username: " + username + " Password: " + password);
+        System.out.println("Username: " + username + " | Password: " + password);
     }
 
     @Then("the login status should be {string}")
@@ -44,7 +44,7 @@ public class LoginSteps {
 
     @When("the user updates profile details:")
     public void updateProfile(DataTable table) {
-        Map<String, String> data = table.asMap();
+        Map<String, String> data = table.asMap(String.class, String.class);
         System.out.println("Name: " + data.get("name"));
         System.out.println("Email: " + data.get("email"));
     }
