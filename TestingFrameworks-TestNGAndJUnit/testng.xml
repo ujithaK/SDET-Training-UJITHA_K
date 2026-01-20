@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="WindowsFrames Suite">
+    <test name="All Selenium Tests">
+        <classes>
+            <class name="seleniumTestNG.SeleniumIntegrationTest"/>
+            <class name="datadriven.ExcelDataTest"/>
+            <class name="dependencies.DependencyTest"/>
+            <class name="tests.DynamicElementsRealWebsiteTest"/>
+            <class name="tests.WindowsAndFramesTest"/>
+            <class name="TestNGBasicsDemo"/>
+        </classes>
+
+        <!-- Optional: add listeners -->
+        <listeners>
+            <listener class-name="listeners.MyTestListener"/>
+        </listeners>
+    </test>
+</suite>
