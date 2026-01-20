@@ -1,65 +1,102 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
-import utils.WaitUtils;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class WaitTest {
 
-    WebDriver driver;
-    WaitUtils wait;
+    public static void main(String[] args) {
 
-    @BeforeClass
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        wait = new WaitUtils(driver);
-    }
+        // ---------- 1. Setup ChromeDriver ----------
+        System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe"); // <-- Replace with your path
 
-    @Test
-    public void testWaits() {
+        // ChromeOptions to avoid errors with latest ChromeDriver versions
+        ChromeOptions options = new ChromeOptions();
 
-        driver.get("https://www.flipkart.com/account/login?ret=/");
+        WebDriver driver = new ChromeDriver(options);
 
         try {
+            // ---------- 2. Implicit Wait ----------
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-            // Enter something invalid to trigger error
-            driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div/div[2]/div/form/div[1]/input")).sendKeys("6309807971");
+            // ---------- 3. Navigate to SauceDemo ----------
+            driver.get("https://www.saucedemo.com/");
 
-            // clickable (otp button)
-            wait.waitForClickable(By.xpath("//*[@id=\"container\"]/div/div[3]/div/div[2]/div/form/div[3]/button")).click();
+            // ---------- 4. Explicit Wait ----------
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-            // visible
-            WebElement msg = wait.waitForVisible(
-                    By.xpath("//*[@id=\"container\"]/div/div[3]/div/div[2]/div/form/div[3]/button")
+            // Login elements
+            WebElement username = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.id("user-name"))
             );
-            System.out.println("The text: " + msg.getText());
+            username.sendKeys("standard_user");
 
-            // invisible Elements
-            wait.waitForInvisible(
-                    By.xpath("//*[@id=\"container\"]/div/div[3]/div/div[2]/div/form/div[1]/input")
+            WebElement password = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.id("password"))
             );
+            password.sendKeys("secret_sauce");
 
-            // Custom wait for text(Invisible text)
-            wait.waitForText(
-                    By.xpath("//*[@id=\"container\"]/div/div[3]/div/div[2]/div/form/div[1]/input"),
-                    "Please enter valid Email ID/Mobile number"
+            WebElement loginButton = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.id("login-button"))
             );
+            loginButton.click();
 
-            Thread.sleep(3000);
+            // ---------- 5. Products Page ----------
+            WebElement productsTitle = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.className("title"))
+            );
+            System.out.println("Page Title: " + productsTitle.getText());
+
+            // Custom wait: wait until first product contains "Sauce Labs"
+            WebElement firstProduct = wait.until(driverInstance -> {
+                WebElement product = driverInstance.findElement(By.className("inventory_item_name"));
+                if (product.isDisplayed() && product.getText().contains("Sauce Labs")) {
+                    return product;
+                }
+                return null; 
+            });
+            System.out.println("First Product: " + firstProduct.getText());
+
+            // Click on first product
+            firstProduct.click();
+
+            // Product details page
+            WebElement productDetailTitle = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.className("inventory_details_name"))
+            );
+            System.out.println("Product Detail: " + productDetailTitle.getText());
+
+            // ---------- 6. Add to Cart ----------
+            WebElement addToCartButton = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn_inventory"))
+            );
+            addToCartButton.click();
+            System.out.println("Product added to cart!");
+
+            // Go to Cart
+            WebElement cartButton = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.id("shopping_cart_container"))
+            );
+            cartButton.click();
+
+            // Cart page title
+            WebElement cartTitle = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.className("title"))
+            );
+            System.out.println("Cart Page Title: " + cartTitle.getText());
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            // ---------- 7. Cleanup ----------
+            driver.quit();
         }
-
-        System.out.println("Waits executed successfully.");
-    }
-
-    @AfterClass
-    public void teardown() {
-        driver.quit();
     }
 }
