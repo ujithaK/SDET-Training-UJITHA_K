@@ -15,17 +15,15 @@ Feature: Login and Dashboard functionality
     When the user logs in with "<username>" and "<password>"
     Then the login status should be "<status>"
 
-    #data Tables
     Examples:
-      | username | password | status  |
-      | ujitha    | ujitha123 | success |
-      | manasa    | wrongpwd | failure |
+      | username | password  | status  |
+      | ujitha   | ujitha123 | success |
+      | manasa   | wrongpwd  | failure |
 
   @profile
   Scenario: Update user profile using data table
     Given the user is logged in
     When the user updates profile details:
-      | field | value          |
-      | name  | ujitha        |
-      | email | uji@test.com  |
+      | name  | ujitha       |
+      | email | uji@test.com |
     Then the profile should be updated successfully
