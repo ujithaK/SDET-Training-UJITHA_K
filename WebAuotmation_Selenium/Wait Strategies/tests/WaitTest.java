@@ -60,7 +60,7 @@ public class WaitTest {
                 if (product.isDisplayed() && product.getText().contains("Sauce Labs")) {
                     return product;
                 }
-                return null; 
+                return null;
             });
             System.out.println("First Product: " + firstProduct.getText());
 
